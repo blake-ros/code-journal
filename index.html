@@ -12,12 +12,37 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-  </header>
+  <header class="container header header-font">Code Journal</header>
   <main>
-    <div data-view="edit-profile"></div>
+    <div data-view="edit-profile">
+      <div class="container">
+        <div class="row header-font title pt-2 pl-2">Edit Profile</div>
+        <div class="row">
+          <div class="column-half"><img src="images/placeholder-image-square.jpg" class="column-full mt-1"></div>
+          <div class="column-half">
+            <div>
+              <form class="form">
+                <label for="avatarUrl" class="mt-1 header-font">Avatar URL</label>
+                <input required type="text" id="avatarUrl" name="avatarUrl" class="mt-1 pb-1 secondary-font">
+                <label for="username" class="mt-2 header-font">Username</label>
+                <input required type="text" id="username" name="username" class="mt-1 pb-1 secondary-font">
+                <label for="fullname" class="mt-2 header-font">Full Name</label>
+                <input required type="text" id="fullName" name="fullName" class="mt-1 pb-1 secondary-font">
+                <label for="location" class="mt-2 header-font">Location</label>
+                <input required type="text" id="location" name="location" class="mt-1 pb-1 secondary-font">
+              </form>
+            </div>
+          </div>
+          <div class="row column-full">
+            <label for="bio" class="mt-1 column-full header-font">Bio</label>
+            <input required type="text" id="bio" name="bio" class="column-full mt-1 bio-sizing secondary-font">
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
