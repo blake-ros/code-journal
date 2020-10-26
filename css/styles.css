@@ -66,6 +66,14 @@
   padding-bottom: 7px;
 }
 
+.pb-2 {
+  padding-bottom: 15px;
+}
+
+.pb-3 {
+  padding-bottom: 25px;
+}
+
 .mb-2 {
   margin-bottom: 15px;
 }
@@ -82,4 +90,8 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.bio-sizing {
+  padding-top: 45px;
 }
