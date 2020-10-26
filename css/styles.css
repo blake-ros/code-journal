@@ -27,7 +27,6 @@
   height: 50px;
   color: #eff1e6;
   font-size: 32px;
-  padding-top: 7px;
 }
 
 .pt-1 {
@@ -93,5 +92,5 @@ img {
 }
 
 .bio-sizing {
-  padding-top: 45px;
+  padding-bottom: 45px;
 }
