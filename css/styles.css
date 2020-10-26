@@ -21,3 +21,11 @@
 .accent-black {
   color: #383838;
 }
+
+.header {
+  background-color: #383838;
+  height: 50px;
+  color: #eff1e6;
+  font-size: 32px;
+  padding-top: 7px;
+}
