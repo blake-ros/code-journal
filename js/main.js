@@ -7,12 +7,14 @@ avatarInput.addEventListener('input', function (e) {
 const formValidation = document.querySelector('form');
 formValidation.addEventListener('submit', function (e) {
   event.preventDefault();
-  data.profile.username = e;
-  data.profile.fullName = e;
-  data.profile.location = e;
-  data.profile.bio = e;
-  data.profile.avatarUrl = e;
+  const form = document.querySelector('form');
+
+  for (var field in data.profile) {
+    data.profile[field] = form.elements[field].value;
+  }
 
   const avatarImage = document.querySelector('img');
-  avatarImage.src = 'images/placeholder-image-square.jpg';
+  avatarImage.setAttribute('src', 'images/placeholder-image-square.jpg');
+
+  form.reset();
 });
