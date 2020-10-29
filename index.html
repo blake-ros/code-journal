@@ -18,30 +18,33 @@
   <header class="container header header-font">Code Journal</header>
   <main>
     <div data-view="edit-profile">
-      <div class="container">
-        <div class="row header-font title pt-2 pl-2">Edit Profile</div>
-        <div class="row">
-          <div class="column-half"><img src="images/placeholder-image-square.jpg" class="column-full mt-1"></div>
-          <div class="column-half">
-            <div>
-              <form class="form">
-                <label for="avatarUrl" class="mt-1 header-font">Avatar URL</label>
-                <input required type="text" id="avatarUrl" name="avatarUrl" class="mt-1 pb-1 secondary-font">
-                <label for="username" class="mt-2 header-font">Username</label>
-                <input required type="text" id="username" name="username" class="mt-1 pb-1 secondary-font">
-                <label for="fullname" class="mt-2 header-font">Full Name</label>
-                <input required type="text" id="fullName" name="fullName" class="mt-1 pb-1 secondary-font">
-                <label for="location" class="mt-2 header-font">Location</label>
-                <input required type="text" id="location" name="location" class="mt-1 pb-1 secondary-font">
-              </form>
+      <form>
+        <div class="container">
+            <div class="row header-font title pt-1 pl-2 margin-left">Edit Profile</div>
+            <div class="row">
+              <div class="column-half"><img src="images/placeholder-image-square.jpg" class="column-full"></div>
+              <div class="column-half">
+                <div>
+                    <label for="avatarUrl" class="mt-1 header-font">Avatar URL</label>
+                    <input required type="text" id="avatarUrl" name="avatarUrl" class="mt-1 pb-1 secondary-font">
+                </div>
+                    <label for="username" class="mt-2 header-font">Username</label>
+                    <input required type="text" id="username" name="username" class="mt-1 pb-1 secondary-font">
+                    <label for="fullname" class="mt-2 header-font">Full Name</label>
+                    <input required type="text" id="fullName" name="fullName" class="mt-1 pb-1 secondary-font">
+                    <label for="location" class="mt-2 header-font">Location</label>
+                    <input required type="text" id="location" name="location" class="mt-1 pb-1 secondary-font">
+              </div>
+              <div class="row column-full">
+                <label for="bio" class="mt-1 column-full header-font">Bio</label>
+                <input required type="text" id="bio" name="bio" class="column-full mt-1 bio-sizing secondary-font">
+              </div>
+              <div>
+                <button class="button-placement button-style pr-2 pl-2 pb-1 pt-1 header-font">Save</button>
+              </div>
             </div>
-          </div>
-          <div class="row column-full">
-            <label for="bio" class="mt-1 column-full header-font">Bio</label>
-            <input required type="text" id="bio" name="bio" class="column-full mt-1 bio-sizing secondary-font">
-          </div>
         </div>
-      </div>
+      </form>
     </div>
   </main>
   <script src="js/data.js"></script>

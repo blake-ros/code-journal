@@ -31,4 +31,8 @@
   .column-half {
     width: 50%;
   }
+
+  .margin-left {
+    margin-left: 46px;
+  }
 }
