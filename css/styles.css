@@ -130,3 +130,11 @@ img {
 .flex-end {
   flex-direction: row-reverse;
 }
+
+.custom-margin {
+  margin-left: 25px;
+}
+
+.inline-block {
+  display: inline-block;
+}
