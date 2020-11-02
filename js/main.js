@@ -20,7 +20,7 @@ formValidation.addEventListener('submit', function (e) {
 });
 
 function renderProfile(profile) {
-  const viewProfile = document.createElement('div');
+  // const viewProfile = document.createElement('div');
 
   const container = document.createElement('div');
 
@@ -37,6 +37,9 @@ function renderProfile(profile) {
   const image = document.createElement('img');
   image.setAttribute('src', profile.avatarUrl);
   image.className = 'column-full';
+
+  column.append(image);
+  secondRow.append(column);
 
   const secondColumn = document.createElement('div');
   secondColumn.className = 'column-half';
@@ -60,4 +63,18 @@ function renderProfile(profile) {
   const bioInfo = document.createElement('div');
   bioInfo.className = 'secondary-font mt-3';
   bioInfo.textContent = profile.bio;
+
+  secondColumn.append(userIcon);
+  secondColumn.append(userInfo);
+  secondColumn.append(breakTag);
+  secondColumn.append(locationIcon);
+  secondColumn.append(locationInfo);
+  secondColumn.append(bioInfo);
+
+  secondRow.append(secondColumn);
+
+  container.append(row);
+  container.append(secondRow);
+
+  return container;
 }
