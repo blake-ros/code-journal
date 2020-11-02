@@ -78,3 +78,14 @@ function renderProfile(profile) {
 
   return container;
 }
+
+function dataView(data) {
+  const view = data.view;
+  // const activeView = document.querySelectorAll('div');
+  // const activeAttribute = activeView.getAttribute('data-view');
+  if (view === 'profile') {
+    const profile = document.querySelector('div[data-view="profile"]');
+    profile.innerHTML = '';
+    profile.append(renderProfile(data.profile));
+  }
+}
