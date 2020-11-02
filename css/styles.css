@@ -57,6 +57,14 @@
   padding-right: 15px;
 }
 
+.mr-1 {
+  margin-right: 7px;
+}
+
+.mr-2 {
+  margin-right: 15px;
+}
+
 .pl-2 {
   padding-left: 15px;
 }
@@ -133,6 +141,10 @@ img {
 
 .custom-margin {
   margin-left: 25px;
+}
+
+.icon-margin {
+  margin-right: 9px;
 }
 
 .inline-block {
