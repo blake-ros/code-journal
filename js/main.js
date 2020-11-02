@@ -18,3 +18,46 @@ formValidation.addEventListener('submit', function (e) {
 
   form.reset();
 });
+
+function renderProfile(profile) {
+  const viewProfile = document.createElement('div');
+
+  const container = document.createElement('div');
+
+  const row = document.createElement('div');
+  row.className = 'row header-font title pt-1 pl-2 margin-left mt-2';
+  row.textContent = profile.fullName;
+
+  const secondRow = document.createElement('div');
+  secondRow.className = 'row mt-2';
+
+  const column = document.createElement('div');
+  column.className = 'column-half';
+
+  const image = document.createElement('img');
+  image.setAttribute('src', profile.avatarUrl);
+  image.className = 'column-full';
+
+  const secondColumn = document.createElement('div');
+  secondColumn.className = 'column-half';
+
+  const userIcon = document.createElement('i');
+  userIcon.className = 'fas fa-user fa-2x icon-margin mt-2';
+
+  const userInfo = document.createElement('div');
+  userInfo.className = 'header-font mb-2 inline-block';
+  userInfo.textContent = profile.username;
+
+  const breakTag = document.createElement('br');
+
+  const locationIcon = document.createElement('i');
+  locationIcon.className = 'fas fa-map-marker-alt fa-2x mr-2';
+
+  const locationInfo = document.createElement('div');
+  locationInfo.className = 'header-font inline-block';
+  locationInfo.textContent = profile.location;
+
+  const bioInfo = document.createElement('div');
+  bioInfo.className = 'secondary-font mt-3';
+  bioInfo.textContent = profile.bio;
+}
