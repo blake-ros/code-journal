@@ -20,7 +20,6 @@ formValidation.addEventListener('submit', function (e) {
 });
 
 function renderProfile(profile) {
-  // const viewProfile = document.createElement('div');
 
   const container = document.createElement('div');
 
