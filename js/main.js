@@ -17,12 +17,15 @@ formValidation.addEventListener('submit', function (e) {
   avatarImage.setAttribute('src', 'images/placeholder-image-square.jpg');
 
   form.reset();
+
+  data.view = 'profile';
+  dataView(data);
 });
 
 function renderProfile(profile) {
-  // const viewProfile = document.createElement('div');
 
   const container = document.createElement('div');
+  container.className = 'container';
 
   const row = document.createElement('div');
   row.className = 'row header-font title pt-1 pl-2 margin-left mt-2';
@@ -81,11 +84,43 @@ function renderProfile(profile) {
 
 function dataView(data) {
   const view = data.view;
-  // const activeView = document.querySelectorAll('div');
-  // const activeAttribute = activeView.getAttribute('data-view');
+
   if (view === 'profile') {
     const profile = document.querySelector('div[data-view="profile"]');
     profile.innerHTML = '';
     profile.append(renderProfile(data.profile));
   }
+
+  const thisForm = document.querySelector('form');
+  if (view === 'edit-profile') {
+    for (const info in data.profile) {
+      thisForm.elements[info].value = data.profile[info];
+    }
+    if (data.profile.avatarUrl !== '') {
+      const avatarImage = document.querySelector('img');
+      avatarImage.setAttribute('src', data.profile.avatarUrl);
+    } else {
+      const avatarImage = document.querySelector('img');
+      avatarImage.setAttribute('src', 'images/placeholder-image-square.jpg');
+    }
+  }
+
+  const allDataViews = document.querySelectorAll('div[data-view]');
+  for (let i = 0; i < allDataViews.length; i++) {
+    if (allDataViews[i].getAttribute('data-view') === view) {
+      allDataViews[i].className = '';
+    } else {
+      allDataViews[i].className = 'hidden';
+    }
+  }
 }
+
+document.addEventListener('DOMContentLoaded', function (e) {
+  if (data.profile.userName === '') {
+    data.view = 'edit-profile';
+    dataView(data);
+  } else {
+    dataView(data);
+  }
+});
+// dataView(data);
