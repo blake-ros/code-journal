@@ -114,4 +114,12 @@ function dataView(data) {
   }
 }
 
-dataView(data);
+document.addEventListener('DOMContentLoaded', function (e) {
+  if (data.profile.userName === '') {
+    data.view = 'edit-profile';
+    dataView(data);
+  } else {
+    dataView(data);
+  }
+});
+// dataView(data);
