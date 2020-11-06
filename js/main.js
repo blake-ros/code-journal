@@ -17,6 +17,9 @@ formValidation.addEventListener('submit', function (e) {
   avatarImage.setAttribute('src', 'images/placeholder-image-square.jpg');
 
   form.reset();
+
+  data.view = 'profile';
+  dataView(data);
 });
 
 function renderProfile(profile) {
