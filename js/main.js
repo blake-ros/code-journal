@@ -25,6 +25,7 @@ formValidation.addEventListener('submit', function (e) {
 function renderProfile(profile) {
 
   const container = document.createElement('div');
+  container.className = 'container';
 
   const row = document.createElement('div');
   row.className = 'row header-font title pt-1 pl-2 margin-left mt-2';
