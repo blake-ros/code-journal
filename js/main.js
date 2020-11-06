@@ -81,11 +81,35 @@ function renderProfile(profile) {
 
 function dataView(data) {
   const view = data.view;
-  // const activeView = document.querySelectorAll('div');
-  // const activeAttribute = activeView.getAttribute('data-view');
+
   if (view === 'profile') {
     const profile = document.querySelector('div[data-view="profile"]');
     profile.innerHTML = '';
     profile.append(renderProfile(data.profile));
   }
+
+  const thisForm = document.querySelector('form');
+  if (view === 'edit-profile') {
+    for (const info in data.profile) {
+      thisForm.elements[info].value = data.profile[info];
+    }
+    if (data.profile.avatarUrl !== '') {
+      const avatarImage = document.querySelector('img');
+      avatarImage.setAttribute('src', data.profile.avatarUrl);
+    } else {
+      const avatarImage = document.querySelector('img');
+      avatarImage.setAttribute('src', 'images/placeholder-image-square.jpg');
+    }
+  }
+
+  const allDataViews = document.querySelectorAll('div[data-view]');
+  for (let i = 0; i < allDataViews.length; i++) {
+    if (allDataViews[i].getAttribute('data-view') === view) {
+      allDataViews[i].className = '';
+    } else {
+      allDataViews[i].className = 'hidden';
+    }
+  }
 }
+
+dataView(data);
