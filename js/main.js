@@ -67,12 +67,24 @@ function renderProfile(profile) {
   bioInfo.className = 'secondary-font mt-3';
   bioInfo.textContent = profile.bio;
 
+  const thirdRow = document.createElement('div');
+  thirdRow.className = 'row mt-3';
+
+  const editButton = document.createElement('a');
+  editButton.textContent = 'Edit';
+  editButton.className = 'edit-button button-style pr-2 pl-2 pb-1 pt-1 header-font';
+  editButton.setAttribute('href', '#');
+  editButton.setAttribute('data-view', 'edit-profile');
+
+  thirdRow.append(editButton);
+
   secondColumn.append(userIcon);
   secondColumn.append(userInfo);
   secondColumn.append(breakTag);
   secondColumn.append(locationIcon);
   secondColumn.append(locationInfo);
   secondColumn.append(bioInfo);
+  secondColumn.append(thirdRow);
 
   secondRow.append(secondColumn);
 
@@ -123,4 +135,18 @@ document.addEventListener('DOMContentLoaded', function (e) {
     dataView(data);
   }
 });
-// dataView(data);
+
+document.addEventListener('click', function (e) {
+  if (event.target.tagName !== 'A') return;
+
+  const view = data.view;
+  if (event.target.tagName === 'A' && view !== 'edit-profile' && data.profile.username === '') {
+    return;
+  }
+
+  if (event.target.tagName === 'A') {
+    data.view = 'edit-profile';
+    dataView(data);
+  }
+
+});

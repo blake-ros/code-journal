@@ -45,6 +45,10 @@
   margin-left: 15px;
 }
 
+.ml-3 {
+  margin-left: 25px;
+}
+
 .pl-1 {
   padding-left: 7px;
 }
@@ -149,4 +153,16 @@ img {
 
 .inline-block {
   display: inline-block;
+}
+
+.edit-button {
+  text-decoration: none;
+  border-color: black;
+  border-width: 3px;
+}
+
+.profile-link {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
 }
