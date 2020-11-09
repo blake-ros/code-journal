@@ -135,4 +135,12 @@ document.addEventListener('DOMContentLoaded', function (e) {
     dataView(data);
   }
 });
-// dataView(data);
+
+document.addEventListener('click', function (e) {
+  if (event.target.tagName !== 'A') return;
+
+  if (event.target.tagName === 'A') {
+    data.view = 'edit-profile';
+    dataView(data);
+  }
+});
