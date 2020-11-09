@@ -139,8 +139,14 @@ document.addEventListener('DOMContentLoaded', function (e) {
 document.addEventListener('click', function (e) {
   if (event.target.tagName !== 'A') return;
 
+  const view = data.view;
+  if (event.target.tagName === 'A' && view !== 'edit-profile' && data.profile.username === '') {
+    return;
+  }
+
   if (event.target.tagName === 'A') {
     data.view = 'edit-profile';
     dataView(data);
   }
+
 });
