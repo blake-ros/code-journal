@@ -67,12 +67,24 @@ function renderProfile(profile) {
   bioInfo.className = 'secondary-font mt-3';
   bioInfo.textContent = profile.bio;
 
+  const thirdRow = document.createElement('div');
+  thirdRow.className = 'row mt-3';
+
+  const editButton = document.createElement('a');
+  editButton.textContent = 'Edit';
+  editButton.className = 'edit-button button-style pr-2 pl-2 pb-1 pt-1 header-font';
+  editButton.setAttribute('href', '#');
+  editButton.setAttribute('data-view', 'edit-profile');
+
+  thirdRow.append(editButton);
+
   secondColumn.append(userIcon);
   secondColumn.append(userInfo);
   secondColumn.append(breakTag);
   secondColumn.append(locationIcon);
   secondColumn.append(locationInfo);
   secondColumn.append(bioInfo);
+  secondColumn.append(thirdRow);
 
   secondRow.append(secondColumn);
 

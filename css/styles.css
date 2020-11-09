@@ -150,3 +150,9 @@ img {
 .inline-block {
   display: inline-block;
 }
+
+.edit-button {
+  text-decoration: none;
+  border-color: black;
+  border-width: 3px;
+}
