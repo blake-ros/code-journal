@@ -22,11 +22,19 @@
   color: #383838;
 }
 
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
 .header {
   background-color: #383838;
   height: 50px;
   color: #eff1e6;
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .pt-1 {
@@ -164,5 +172,11 @@ img {
 .profile-link {
   text-decoration: none;
   color: white;
-  font-size: 20px;
+  font-size: 16px;
+}
+
+.entries-link {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
 }
