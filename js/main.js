@@ -145,3 +145,9 @@ document.addEventListener('click', function (e) {
   data.view = view;
   dataView(data);
 });
+
+const newEntryButton = document.getElementById('entryButton');
+newEntryButton.addEventListener('click', function(e) {
+  data.view = 'create-entry';
+  dataView(data);
+})
