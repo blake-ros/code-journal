@@ -24,7 +24,25 @@
       <div class="container">
         <div class="row">
           <h1 class="header-font">Entries</h1>
-          <button class="right save-button header-font">Save</button>
+          <button class="right save-button header-font">New</button>
+        </div>
+      </div>
+    </div>
+    <div data-view="create-entry">
+      <div class="container">
+        <div class="row header-font title pt-1 pl-2 margin-left">New Entry</div>
+        <div class="row">
+          <div class="column-half"><img src="images/placeholder-image-square.jpg" class="column-full"></div>
+          <div class="column-half">
+            <label for="imageURL" class="mt-2 header-font">Image URL</label>
+            <input required type="text" id="imageURL" name="imageURL" class="input-margin mb-1 pb-1 secondary-font d-block column-full">
+            <label for="title" class="mt-2 header-font">Title</label>
+            <input required type="text" id="title" name="title" class="input-margin mb-1 pb-1 secondary-font d-block column-full">
+          </div>
+        </div>
+        <div class="row column-full">
+          <label for="notes" class="mt-1 column-full header-font">Notes</label>
+          <input required type="text" id="notes" name="notes" class="column-full mt-1 bio-sizing secondary-font">
         </div>
       </div>
     </div>
