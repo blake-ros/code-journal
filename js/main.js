@@ -128,7 +128,7 @@ function dataView(data) {
 }
 
 document.addEventListener('DOMContentLoaded', function (e) {
-  if (data.profile.userName === '') {
+  if(data.profile.username === '') {
     data.view = 'edit-profile';
     dataView(data);
   } else {
@@ -137,16 +137,11 @@ document.addEventListener('DOMContentLoaded', function (e) {
 });
 
 document.addEventListener('click', function (e) {
-  if (event.target.tagName !== 'A') return;
-
-  const view = data.view;
-  if (event.target.tagName === 'A' && view !== 'edit-profile' && data.profile.username === '') {
+  if(event.target.tagName !== 'A') return;
+  const view = event.target.getAttribute('data-view');
+  if(data.profile.username === '' && view !== 'edit-profile') {
     return;
   }
-
-  if (event.target.tagName === 'A') {
-    data.view = 'edit-profile';
-    dataView(data);
-  }
-
+  data.view = view;
+  dataView(data);
 });
