@@ -156,3 +156,16 @@ document.addEventListener('input', function(e) {
   const imageUrl = docuemnt.getElementById('imageURL');
   imageUrl.src = e.target.value;
 })
+
+const journalEntry = document.getElementById('journal-entry');
+journalEntry.addEventListener('submit', function(e) {
+  const newEntry = {};
+  const photoURL = document.getElementById('imageURL');
+  const title = document.getElementById('title');
+  const notes = document.getElementById('notes');
+  newEntry.photoURL = photoURL.target.value;
+  newEntry.title = title.target.value;
+  newEntry.notes = notes.target.value;
+
+  data.entries.push(newEntry);
+})
