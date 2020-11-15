@@ -151,3 +151,8 @@ newEntryButton.addEventListener('click', function(e) {
   data.view = 'create-entry';
   dataView(data);
 })
+
+document.addEventListener('input', function(e) {
+  const imageUrl = docuemnt.getElementById('imageURL');
+  imageUrl.src = e.target.value;
+})
