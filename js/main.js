@@ -175,4 +175,7 @@ journalEntry.addEventListener('submit', function(e) {
   photoImage.setAttribute('src', 'images/placeholder-image-square.jpg');
 
   form.reset();
+
+  data.view = "entries";
+  dataView(data);
 })
