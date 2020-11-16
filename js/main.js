@@ -159,6 +159,8 @@ document.addEventListener('input', function(e) {
 
 const journalEntry = document.getElementById('journal-entry');
 journalEntry.addEventListener('submit', function(e) {
+  event.preventDefault();
+
   const newEntry = {};
   const photoURL = document.getElementById('imageURL');
   const title = document.getElementById('title');
@@ -168,4 +170,7 @@ journalEntry.addEventListener('submit', function(e) {
   newEntry.notes = notes.target.value;
 
   data.entries.push(newEntry);
+
+  const photoImage = document.getElementById('photo-entry');
+  photoImage.setAttribute('src', 'images/placeholder-image-square.jpg');
 })
