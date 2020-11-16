@@ -152,9 +152,10 @@ newEntryButton.addEventListener('click', function(e) {
   dataView(data);
 })
 
-document.addEventListener('input', function(e) {
-  const imageUrl = docuemnt.getElementById('imageURL');
-  imageUrl.src = e.target.value;
+const imageUrl = document.getElementById('imageURL');
+imageUrl.addEventListener('input', function(e) {
+  const imageEntry = document.getElementById('photo-entry');
+  imageEntry.src = e.target.value;
 })
 
 const journalEntry = document.getElementById('journal-entry');
