@@ -173,4 +173,6 @@ journalEntry.addEventListener('submit', function(e) {
 
   const photoImage = document.getElementById('photo-entry');
   photoImage.setAttribute('src', 'images/placeholder-image-square.jpg');
+
+  form.reset();
 })
