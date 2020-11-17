@@ -128,6 +128,13 @@ function dataView(data) {
 }
 
 document.addEventListener('DOMContentLoaded', function (e) {
+  for(let i = 0; i < data.entries.length; i++) {
+    const entry = renderJournalEntry(data.entries[i]);
+
+    const entriesList = document.getElementById('entries-list');
+    entriesList.append(entry);
+  }
+
   if(data.profile.username === '') {
     data.view = 'edit-profile';
     dataView(data);
