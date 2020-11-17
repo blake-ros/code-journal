@@ -4,10 +4,10 @@ avatarInput.addEventListener('input', function (e) {
   avatarImage.src = e.target.value;
 });
 
-const formValidation = document.querySelector('form');
+const formValidation = document.getElementById('edit-profile-form');
 formValidation.addEventListener('submit', function (e) {
   event.preventDefault();
-  const form = document.querySelector('form');
+  const form = document.getElementById('edit-profile-form');
 
   for (var field in data.profile) {
     data.profile[field] = form.elements[field].value;
@@ -152,20 +152,33 @@ newEntryButton.addEventListener('click', function(e) {
   dataView(data);
 })
 
-document.addEventListener('input', function(e) {
-  const imageUrl = docuemnt.getElementById('imageURL');
-  imageUrl.src = e.target.value;
+const imageUrl = document.getElementById('imageURL');
+imageUrl.addEventListener('input', function(e) {
+  const imageEntry = document.getElementById('photo-entry');
+  imageEntry.src = e.target.value;
 })
 
 const journalEntry = document.getElementById('journal-entry');
 journalEntry.addEventListener('submit', function(e) {
+  event.preventDefault();
+
   const newEntry = {};
-  const photoURL = document.getElementById('imageURL');
-  const title = document.getElementById('title');
-  const notes = document.getElementById('notes');
-  newEntry.photoURL = photoURL.target.value;
-  newEntry.title = title.target.value;
-  newEntry.notes = notes.target.value;
+  newEntry.imageURL = "";
+  newEntry.title = "";
+  newEntry.notes = "";
+
+  const form = document.getElementById('journal-entry');
+  for (var field in newEntry) {
+    newEntry[field] = form.elements[field].value;
+  }
 
   data.entries.push(newEntry);
+
+  const photoImage = document.getElementById('photo-entry');
+  photoImage.setAttribute('src', 'images/placeholder-image-square.jpg');
+
+  form.reset();
+
+  data.view = "entries";
+  dataView(data);
 })
