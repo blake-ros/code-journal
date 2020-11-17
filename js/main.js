@@ -182,3 +182,30 @@ journalEntry.addEventListener('submit', function(e) {
   data.view = "entries";
   dataView(data);
 })
+
+function renderJounralEntry(newEntry) {
+  const container = document.createElement('div');
+  container.className = 'container';
+
+  const row = document.createElement('div');
+  row.className = 'row';
+
+  const halfColumn = document.createElement('div');
+  halfColumn.className = 'column-half';
+
+  const image = document.createElement('img');
+  image.setAttribute('src', newEntry.imageURL);
+  image.className = 'column-full';
+
+  const secondHalfColumn = document.createElement('div');
+  secondHalfColumn.className = 'column-half';
+
+  const header = document.createElement('div');
+  header.textContent = newEntry.title;
+  header.className = 'header-font');
+
+  const notes = document.createElement('div');
+  notes.textContent = newEntry.notes;
+  notes.className = 'secondary-font mt-2';
+
+}
