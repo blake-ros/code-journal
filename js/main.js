@@ -103,7 +103,7 @@ function dataView(data) {
     profile.append(renderProfile(data.profile));
   }
 
-  const thisForm = document.querySelector('form');
+  const thisForm = document.getElementById('edit-profile-form');
   if (view === 'edit-profile') {
     for (const info in data.profile) {
       thisForm.elements[info].value = data.profile[info];
