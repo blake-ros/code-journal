@@ -4,10 +4,10 @@ avatarInput.addEventListener('input', function (e) {
   avatarImage.src = e.target.value;
 });
 
-const formValidation = document.querySelector('form');
+const formValidation = document.getElementById('edit-profile-form');
 formValidation.addEventListener('submit', function (e) {
   event.preventDefault();
-  const form = document.querySelector('form');
+  const form = document.getElementById('edit-profile-form');
 
   for (var field in data.profile) {
     data.profile[field] = form.elements[field].value;
@@ -163,12 +163,14 @@ journalEntry.addEventListener('submit', function(e) {
   event.preventDefault();
 
   const newEntry = {};
-  const photoURL = document.getElementById('imageURL');
-  const title = document.getElementById('title');
-  const notes = document.getElementById('notes');
-  newEntry.photoURL = photoURL.target.value;
-  newEntry.title = title.target.value;
-  newEntry.notes = notes.target.value;
+  newEntry.imageURL = "";
+  newEntry.title = "";
+  newEntry.notes = "";
+
+  const form = document.getElementById('journal-entry');
+  for (var field in newEntry) {
+    newEntry[field] = form.elements[field].value;
+  }
 
   data.entries.push(newEntry);
 
