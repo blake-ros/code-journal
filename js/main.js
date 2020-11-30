@@ -190,7 +190,7 @@ journalEntry.addEventListener('submit', function(e) {
   dataView(data);
 })
 
-function renderJounralEntry(newEntry) {
+function renderJournalEntry(newEntry) {
   const container = document.createElement('div');
   container.className = 'container';
 
@@ -209,7 +209,7 @@ function renderJounralEntry(newEntry) {
 
   const header = document.createElement('div');
   header.textContent = newEntry.title;
-  header.className = 'header-font');
+  header.className = 'header-font';
 
   const notes = document.createElement('div');
   notes.textContent = newEntry.notes;
