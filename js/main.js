@@ -134,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
     const entriesList = document.getElementById('entries-list');
     entriesList.append(entry);
   }
+  console.log(enriesList);
 
   if(data.profile.username === '') {
     data.view = 'edit-profile';
