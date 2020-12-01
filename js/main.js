@@ -134,7 +134,8 @@ document.addEventListener('DOMContentLoaded', function (e) {
     const entriesList = document.getElementById('entries-list');
     entriesList.append(entry);
   }
-  console.log(enriesList);
+
+  console.log(data.view);
 
   if(data.profile.username === '') {
     data.view = 'edit-profile';
@@ -181,6 +182,8 @@ journalEntry.addEventListener('submit', function(e) {
   }
 
   data.entries.push(newEntry);
+  const updateJournal = document.getElementById('entries-list');
+  updateJournal.append(renderJournalEntry(newEntry));
 
   const photoImage = document.getElementById('photo-entry');
   photoImage.setAttribute('src', 'images/placeholder-image-square.jpg');
