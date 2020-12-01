@@ -24,18 +24,9 @@
       <div class="container">
         <div class="row">
           <h1 class="header-font">Entries</h1>
-          <button class="right save-button header-font" id="entryButton">New</button>
+          <button class="header-font button-style float-right mt-3 mb-3 pr-2 pl-2 entry-button-size" id="entryButton">New</button>
         </div>
-        <ol id="entries-list"></ol>
-        <div class="container">
-          <div class="row">
-            <div class="column-half"><img src="images/placeholder-image-square.jpg" class="column-full" id="last-image"></div>
-            <div class="column-half">
-              <div class="header-font">title</div>
-              <div class="secondary-font mt-2">lorem ipsum notes</div>
-            </div>
-          </div>
-        </div>
+        <ul id="entries-list"></ul>
       </div>
     </div>
     <div data-view="create-entry">
@@ -56,7 +47,7 @@
             <input required type="text" id="notes" name="notes" class="column-full mt-1 bio-sizing secondary-font">
           </div>
           <div class="row flex-end column-full mt-1">
-            <button class="button-placement button-style pr-2 pl-2 pb-1 pt-1 header-font">Save</button>
+            <button class="button-placement button-style pr-2 pl-2 pb-1 pt-1 header-font" id="save-journal-entry">Save</button>
           </div>
         </div>
       </form>

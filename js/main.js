@@ -135,6 +135,8 @@ document.addEventListener('DOMContentLoaded', function (e) {
     entriesList.append(entry);
   }
 
+  console.log(data.view);
+
   if(data.profile.username === '') {
     data.view = 'edit-profile';
     dataView(data);
@@ -180,6 +182,8 @@ journalEntry.addEventListener('submit', function(e) {
   }
 
   data.entries.push(newEntry);
+  const updateJournal = document.getElementById('entries-list');
+  updateJournal.append(renderJournalEntry(newEntry));
 
   const photoImage = document.getElementById('photo-entry');
   photoImage.setAttribute('src', 'images/placeholder-image-square.jpg');
@@ -190,7 +194,10 @@ journalEntry.addEventListener('submit', function(e) {
   dataView(data);
 })
 
-function renderJounralEntry(newEntry) {
+function renderJournalEntry(newEntry) {
+  console.log(newEntry);
+  const listItemEntry = document.createElement('li');
+
   const container = document.createElement('div');
   container.className = 'container';
 
@@ -204,15 +211,28 @@ function renderJounralEntry(newEntry) {
   image.setAttribute('src', newEntry.imageURL);
   image.className = 'column-full';
 
+  halfColumn.append(image);
+
   const secondHalfColumn = document.createElement('div');
   secondHalfColumn.className = 'column-half';
 
   const header = document.createElement('div');
   header.textContent = newEntry.title;
-  header.className = 'header-font');
+  header.className = 'header-font';
 
   const notes = document.createElement('div');
   notes.textContent = newEntry.notes;
   notes.className = 'secondary-font mt-2';
 
+  secondHalfColumn.append(header);
+  secondHalfColumn.append(notes);
+
+  row.append(halfColumn);
+  row.append(secondHalfColumn);
+
+  container.append(row);
+
+  listItemEntry.append(container);
+
+  return listItemEntry
 }
