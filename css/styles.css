@@ -197,3 +197,10 @@ img {
 ul {
   list-style-type: none;
 }
+
+li {
+  border-color: #de7347;
+  border-radius: 10px;
+  border-style: solid;
+  margin: 5px;
+}
