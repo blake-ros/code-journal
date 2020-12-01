@@ -191,6 +191,9 @@ journalEntry.addEventListener('submit', function(e) {
 })
 
 function renderJournalEntry(newEntry) {
+  console.log(newEntry);
+  const listItemEntry = document.createElement('li');
+
   const container = document.createElement('div');
   container.className = 'container';
 
@@ -204,6 +207,8 @@ function renderJournalEntry(newEntry) {
   image.setAttribute('src', newEntry.imageURL);
   image.className = 'column-full';
 
+  halfColumn.append(image);
+
   const secondHalfColumn = document.createElement('div');
   secondHalfColumn.className = 'column-half';
 
@@ -215,4 +220,15 @@ function renderJournalEntry(newEntry) {
   notes.textContent = newEntry.notes;
   notes.className = 'secondary-font mt-2';
 
+  secondHalfColumn.append(header);
+  secondHalfColumn.append(notes);
+
+  row.append(halfColumn);
+  row.append(secondHalfColumn);
+
+  container.append(row);
+
+  listItemEntry.append(container);
+
+  return listItemEntry
 }
